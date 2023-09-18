@@ -26,8 +26,11 @@ form.addEventListener('input', formUpdate);
 
  form.addEventListener("submit", (event) => {
    event.preventDefault();
-  console.log(form.elements.email.value) ;
-  console.log(form.elements.message.value) ;
+  if(form.elements.email.value === "" && form.elements.message.value === "") {
+    console.log("Please, input values ;)") ;
+    return ;
+  }
+   console.log(formData) ;
   localStorage.removeItem(localStorageKey);
    form.reset();
  });
